@@ -4,11 +4,11 @@ const app = express();
 const { UserRoutes } = require("./Routes/user.route");
 const { FlightRoutes } = require("./Routes/flight.route");
 // const { DashboardRoutes } = require("./Routes/booking.route");
-// const { BookingRoutes } = require("./Routes/dashbourd.route");
+const { BookingRoutes } = require("./Routes/booking.route");
 app.use(express.json());
-// app.use("/booking", BookingRoutes, (req, res) => {
-//   res.sendStatus(404);
-// });
+app.use("/booking", BookingRoutes, (req, res) => {
+  res.sendStatus(404);
+});
 // app.use("/dashboard", DashboardRoutes, (req, res) => {
 //   res.sendStatus(404);
 // });
